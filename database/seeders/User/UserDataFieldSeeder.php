@@ -40,12 +40,6 @@ class UserDataFieldSeeder extends DatabaseSeeder
         ]);
 
         UserDataField::factory()->create([
-            'name' => 'Почта',
-            'slug' => 'email',
-            'type' => 'string',
-        ]);
-
-        UserDataField::factory()->create([
             'name' => 'Дата подтверждения почты',
             'slug' => 'email_verified_at',
             'type' => 'timestamp',
