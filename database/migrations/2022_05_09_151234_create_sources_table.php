@@ -1,6 +1,5 @@
 <?php
 
-use Domain\User\Models\Source;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
@@ -8,17 +7,16 @@ use Illuminate\Database\Migrations\Migration;
 return new class extends Migration {
     public function up(): void
     {
-        Schema::create('users', static function (Blueprint $table) {
+        Schema::create('sources', static function (Blueprint $table) {
             $table->id();
-            $table->foreignIdFor(Source::class);
-            $table->string('password');
-            $table->rememberToken();
+            $table->string('name');
+            $table->string('slug');
             $table->timestamps();
         });
     }
 
     public function down(): void
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('sources');
     }
 };
